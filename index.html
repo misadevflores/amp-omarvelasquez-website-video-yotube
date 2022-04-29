@@ -314,8 +314,8 @@
    <main >
     <hr>
     <div class="cont-video">
-    <h2>Recomendados</h2>
-      <amp-list layout="fixed-height" height="100" src="https://misadevflores.github.io/-misadevflores-amp-carrodecompra-omarvelasquez/data.json" binding="no">
+   <!--  <h2>Recomendados</h2>
+      <amp-list layout="fixed-height" height="100" src="https://misadevflores.github.io/amp-omarvelasquez-website-video-yotube/recomendado.json?01" binding="no">
         <div placeholder>
           <div class="placeholder-container">
             <div class="placeholder-vid">
@@ -350,74 +350,15 @@
             </div>
           </div>
         </div>
-        <template type="amp-mustache">
+        <template type="amp-mustache3" style="height:500px;">
           <div class="video">
             <amp-youtube
               data-videoid="{{id}}"
               layout="responsive"
               width="480"
-              height="270"
+              height="370"
             >
-              <amp-img src="{{img}}" placeholder layout="fill"> </amp-img>
-            </amp-youtube>
-            <h2>{{title}}</h2>
-            <p>Publicado en {{date}}</p>
-            <p>
-              <strong>{{creator}}</strong>
-            </p>
-            <p>Duracion: {{duration}}</p>
-          </div>
-        </template>
-
-      </amp-list>
-      <br>
-      <hr>
-      <h2>Shorts populares</h2>
-      <br>
-      <amp-list layout="fixed-height" height="100" src="data.json" binding="no">
-        <div placeholder>
-          <div class="placeholder-container">
-            <div class="placeholder-vid">
-              <div class="vid-pl"></div>
-              <div class="title-pl"></div>
-              <div class="title-pl"></div>
-            </div>
-            <div class="placeholder-vid">
-              <div class="vid-pl"></div>
-              <div class="title-pl"></div>
-              <div class="title-pl"></div>
-            </div>
-            <div class="placeholder-vid">
-              <div class="vid-pl"></div>
-              <div class="title-pl"></div>
-              <div class="title-pl"></div>
-            </div>
-            <div class="placeholder-vid">
-              <div class="vid-pl"></div>
-              <div class="title-pl"></div>
-              <div class="title-pl"></div>
-            </div>
-            <div class="placeholder-vid">
-              <div class="vid-pl"></div>
-              <div class="title-pl"></div>
-              <div class="title-pl"></div>
-            </div>
-            <div class="placeholder-vid">
-              <div class="vid-pl"></div>
-              <div class="title-pl"></div>
-              <div class="title-pl"></div>
-            </div>
-          </div>
-        </div>
-        <template type="amp-mustache">
-          <div class="video">
-            <amp-youtube
-              data-videoid="{{id}}"
-              layout="responsive"
-              width="480"
-              height="270"
-            >
-              <amp-img src="{{img}}" placeholder layout="fill"> </amp-img>
+              <amp-img src="{{img}}" placeholder > </amp-img>
             </amp-youtube>
             <h2>{{title}}</h2>
             <p>Publicado en {{date}}</p>
@@ -430,6 +371,67 @@
 
       </amp-list>
       
+      <br>
+      <hr> -->
+      <h2>Shorts populares</h2>
+      <br>
+      <amp-list layout="fixed-height" height="100" src="https://misadevflores.github.io/amp-omarvelasquez-website-video-yotube/short.json?d" binding="no">
+        <div placeholder>
+          <div class="placeholder-container">
+            <div class="placeholder-vid">
+              <div class="vid-pl"></div>
+              <div class="title-pl"></div>
+              <div class="title-pl"></div>
+            </div>
+            <div class="placeholder-vid">
+              <div class="vid-pl"></div>
+              <div class="title-pl"></div>
+              <div class="title-pl"></div>
+            </div>
+            <div class="placeholder-vid">
+              <div class="vid-pl"></div>
+              <div class="title-pl"></div>
+              <div class="title-pl"></div>
+            </div>
+            <div class="placeholder-vid">
+              <div class="vid-pl"></div>
+              <div class="title-pl"></div>
+              <div class="title-pl"></div>
+            </div>
+            <div class="placeholder-vid">
+              <div class="vid-pl"></div>
+              <div class="title-pl"></div>
+              <div class="title-pl"></div>
+            </div>
+            <div class="placeholder-vid">
+              <div class="vid-pl"></div>
+              <div class="title-pl"></div>
+              <div class="title-pl"></div>
+            </div>
+          </div>
+        </div>
+        <template type="amp-mustache">
+          <div class="video">
+            <amp-youtube
+              data-videoid="{{shortid}}"
+              layout="responsive"
+              width="480"
+              height="370"
+            >
+              <amp-img src="{{shortimg}}" placeholder layout="fill2"> </amp-img>
+            </amp-youtube>
+            <h2>{{shorttitle}}</h2>
+            <p>Publicado en {{shortdate}}</p>
+            <p>
+              <strong>{{shortcreator}}</strong>
+            </p>
+            <p>Duracion: {{shortduration}}</p>
+          </div>
+        </template>
+
+      </amp-list>
+
+
     </div>
 </main>
   </body>
