@@ -4,12 +4,12 @@
     <meta charset="utf-8" />
     <script async src="https://cdn.ampproject.org/v0.js"></script>
     <title>My YouTube Page</title>
-    <link rel="canonical" href="" />
+    <link rel="canonical" href="https://misadevflores.github.io/amp-omarvelasquez-website-video-yotube/" />
     <link rel="shortcut icon" href="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fcheese-favicon.png?1540228964214"
     />
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
+   
     <script async src="https://kit.fontawesome.com/90067ac7ab.js" crossorigin="anonymous"></script>
     <link href="http://fonts.cdnfonts.com/css/youtube-sans" rel="stylesheet">
                 
@@ -23,6 +23,7 @@
       custom-element="amp-youtube"
       src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"
     ></script>
+     <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
 
       <script async custom-element="amp-list" src="https://cdn.ampproject.org/v0/amp-list-0.1.js"></script>
     <!-- ... and the `amp-mustache` component in the header. -->
@@ -215,7 +216,7 @@
           width: 140px;
           margin-left: 30px;
         }
-        .m-li{font-size:10px;,margin: 0px 0px;}
+        .m-li{font-size:10px;margin: 0px 0px;}
       }
       @media (max-width: 460px) {
         .sidebar{
@@ -259,7 +260,7 @@
     
       </div>
       <div class="buscar left">
-        <input type="" name="" class="input-b">
+        <input type="search" placeholder="Search..." name="search" class="input-b">
       </div>
       <div class="bar-men left">
         <span class="m-li"><i class="fas fa-video fa-2xl"></i></span>
@@ -418,7 +419,7 @@
               width="480"
               height="370"
             >
-              <amp-img src="{{shortimg}}" placeholder layout="fill2"> </amp-img>
+              <amp-img src="{{shortimg}}" placeholder layout="fill"> </amp-img>
             </amp-youtube>
             <h2>{{shorttitle}}</h2>
             <p>Publicado en {{shortdate}}</p>
