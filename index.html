@@ -315,9 +315,10 @@
    <main >
     <hr>
     <div class="cont-video">
-   <!--  <h2>Recomendados</h2>
-      <amp-list layout="fixed-height" height="100" src="https://misadevflores.github.io/amp-omarvelasquez-website-video-yotube/recomendado.json?01" binding="no">
-        <div placeholder>
+
+    <h2>Recomendados</h2>
+    <amp-list width="auto" height="510" layout="fixed-height" src="https://misadevflores.github.io/amp-omarvelasquez-website-video-yotube/recomendado.json?01" binding="refresh">
+      <div placeholder>
           <div class="placeholder-container">
             <div class="placeholder-vid">
               <div class="vid-pl"></div>
@@ -351,32 +352,27 @@
             </div>
           </div>
         </div>
-        <template type="amp-mustache3" style="height:500px;">
-          <div class="video">
-            <amp-youtube
-              data-videoid="{{id}}"
-              layout="responsive"
-              width="480"
-              height="370"
-            >
-              <amp-img src="{{img}}" placeholder > </amp-img>
-            </amp-youtube>
-            <h2>{{title}}</h2>
-            <p>Publicado en {{date}}</p>
-            <p>
-              <strong>{{creator}}</strong>
-            </p>
-            <p>Duracion: {{duration}}</p>
-          </div>
+        <template type="amp-mustache">
+            <div class="video">
+                <amp-youtube data-videoid="{{id}}" layout="responsive" width="480" height="270">
+                    <amp-img src="{{img}}" placeholder layout="fill"></amp-img>
+                </amp-youtube>
+                <h2>{{title}}</h2>
+                <p>Published on {{date}}</p>
+                <p>
+                    <strong>{{creator}}</strong>
+                </p>
+                <p>Duration: {{duration}}</p>
+            </div>
         </template>
-
-      </amp-list>
-      
+    </amp-list>
       <br>
-      <hr> -->
+      <br>
+      <hr>
       <h2>Shorts populares</h2>
       <br>
-      <amp-list layout="fixed-height" height="100" src="https://misadevflores.github.io/amp-omarvelasquez-website-video-yotube/short.json?d" binding="no">
+      <br>
+      <amp-list layout="fixed-height" height="510" src="https://misadevflores.github.io/amp-omarvelasquez-website-video-yotube/short.json?d" binding="no">
         <div placeholder>
           <div class="placeholder-container">
             <div class="placeholder-vid">
@@ -431,7 +427,9 @@
         </template>
 
       </amp-list>
-
+        <br>
+      <br>
+      <hr>
 
     </div>
 </main>
