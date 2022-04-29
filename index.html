@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html ⚡ lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <title>My YouTube Page</title>
+    <link rel="canonical" href="" />
+    <link rel="shortcut icon" href="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fcheese-favicon.png?1540228964214"
+    />
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
+    <script async src="https://kit.fontawesome.com/90067ac7ab.js" crossorigin="anonymous"></script>
+    <link href="http://fonts.cdnfonts.com/css/youtube-sans" rel="stylesheet">
+                
+
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1" />
+
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    
+     <script
+      async
+      custom-element="amp-youtube"
+      src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"
+    ></script>
+
+      <script async custom-element="amp-list" src="https://cdn.ampproject.org/v0/amp-list-0.1.js"></script>
+    <!-- ... and the `amp-mustache` component in the header. -->
+    <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script>
+    <!-- Import the `amp-bind` component for dynamically changing the content of an `amp-list`. -->
+    <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
+
+    <style amp-custom>
+      body {
+        font-family: 'YouTube Sans', sans-serif;
+        /*font-family: 'YouTube Sans Dark', sans-serif;*/                                
+        line-height: 1.5rem;
+        min-width: 315px;
+        width: 100%;
+        /*background: #312E2E;*/
+      }
+      li{list-style: none;
+        font-family: 'YouTube Sans Dark', sans-serif;
+        margin: 10px;
+        cursor: pointer;
+      }
+      .m-li{
+        margin: 0px 10px;
+      }
+      main {
+        padding: 16px;
+        
+      }
+      .cont-video{
+        margin: 10px;
+        padding: 5px;
+        background:#FEFEFE;
+        border-radius: 5px 0px 5px ;
+        box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+      }
+      .video {
+        width: 210px;
+        padding: 3px;
+
+        margin-right: 4px;
+        border-radius: 3px;
+        box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+      }
+
+      .video h2 {
+        margin: 8px 0;
+        font-size: 14px;
+          height: auto;
+        line-height: 14px;
+        font-family: 'YouTube Sans', sans-serif;
+      }
+
+      .video p {
+        margin: 0 0 4px 0;
+        font-size: 12px;
+        font-family: 'YouTube Sans', sans-serif;
+        color: #444;
+        line-height: 14px;
+      }
+
+      amp-list div[role="list"] {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+      }
+
+      .placeholder-container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+      }
+
+      .placeholder-vid {
+        margin-right: 4px;
+      }
+
+      .placeholder-vid .vid-pl {
+        width: 210px;
+        height: 118px;
+        background-color: #d8d8d8;
+      }
+
+      .placeholder-vid .title-pl {
+        width: 210px;
+        height: 14px;
+        margin-top: 8px;
+        background-color: #d8d8d8;
+      }
+
+      /* header */
+      header{
+        top: 30px;
+      	width: 100%;
+        height: 90px;
+        box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+      	height: 50px;
+      	padding: 10px;
+        background:#FEFEFE;
+      }
+      .logo{
+        margin: 0px 20px;
+        width: 100px;
+        height: 40px;
+      }
+      .buscar{
+        width: 500px;
+        margin: auto 170px;
+      }
+      .input-b{
+        padding: 10px;
+        width: 80%;
+      }
+      .bar-men{
+        width:330px;
+        margin: 0px;
+        margin-top: 0px;
+        padding: 0px;
+        
+      }
+      
+      /* sidebar */
+      .sidebar{
+        width:20%;
+        position: fixed;
+        z-index: 20;
+        height: 100vh;
+        overflow: scroll;
+        display: none;
+      }
+      .sidebar > .main-menu{
+        width:90%;
+
+      }
+    
+      .main-menu{
+        display: flex;
+        opacity: 0;
+        transition: 0.5s;
+        padding: 6px;
+        width:90%;
+        background: #fff;
+        margin: 5px;
+        border-radius: 0px 0px 7px ;
+        box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+      }
+      .main-menu nav{
+        /*overflow: scroll;*/
+      }
+      #menu{
+        display: none;
+      }
+      #menu:checked + label .sidebar{
+        display: block;
+      }
+      #menu:checked + label .main-menu{
+        opacity: 1;
+        height: auto;
+      }
+      .left{float: left;}
+
+      .mne{
+        width: 40px;
+      }
+      ul li:hover{
+        background: #222;
+        padding: 5px;
+        color: #fff;
+        cursor: pointer;
+      }
+      /* modo resposivo */
+      @media (max-width: 760px) {
+        .sidebar{
+          width: 700px;
+        }
+        .cont-video{
+          width: 100%;
+        }
+        .video{
+          width: 45%;
+          margin: 5px;
+          padding: 5px;
+        }
+        .buscar{
+          width: 250px;
+          margin: 0px 100px;
+        }
+        .bar-men{
+          width: 140px;
+          margin-left: 30px;
+        }
+        .m-li{font-size:10px;,margin: 0px 0px;}
+      }
+      @media (max-width: 460px) {
+        .sidebar{
+          width: 700px;
+        }
+        .cont-video{
+          width: 90%;
+        }
+        .video{
+          width: 100%;
+          margin: 5px;
+          padding: 5px;
+        }
+         .buscar{
+          visibility: hidden;
+        }
+        .bar-men{
+          display: none;
+        }
+         ul li:hover{
+          background: #222;
+          padding: 5px;
+          color: #fff;
+          cursor: pointer;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <input type="checkbox" id="menu" >
+    <label for="menu">
+  	<header>
+      <div class="mne left" style="cursor: pointer;">
+       <span class="material-icons" style="cursor: pointer;margin:10px 40px; ">
+            menu
+        </span> 
+
+      </div>
+      <div class="mne left">
+        <amp-img class="logo" src="https://i.ibb.co/BgqdsDc/youtube-logo-2013-png-1.png" width="323" height="146" layout="responsive"></amp-img>
+    
+      </div>
+      <div class="buscar left">
+        <input type="" name="" class="input-b">
+      </div>
+      <div class="bar-men left">
+        <span class="m-li"><i class="fas fa-video fa-2xl"></i></span>
+        <span class="m-li"><i class="fas fa-bell fa-2xl"></i></span>
+        <span class="m-li" ><i class="fas fa-user-circle fa-2xl"></i></span>
+      </div>
+      
+  	</header>
+  
+    <div class="sidebar">
+  	<div class="main-menu">
+  		<nav>
+  			<ul>
+  				<li><i class="fas fa-home-alt"></i> Inicio</li>
+  				<li><i class="fas fa-compass"></i> Explorar</li>
+  				<li><i class="fas fa-photo-video"></i> Suscripciones</li>
+  			</ul>
+  			<hr>
+  			<ul>
+  				<li><i class="far fa-images"></i> Bliblioteca</li>
+  				<li><i class="fas fa-history"></i> Historial</li>
+  				<li><i class="fab fa-youtube"></i> Mi video</li>
+          <li><i class="far fa-clock"></i> Ver más tarde</li>
+          <li><i class="fas fa-thumbs-up"></i> Video que me gusten</li>
+          <li><i class="fas fa-angle-double-right"></i> Ver más</li>
+  			</ul>
+  			<hr>
+        <ul>
+            <h3>MÁS DE YOUTUBE</h3>
+            <li><i class="fas fa-gamepad"></i> Videojuego</li>
+            <li><i class="fas fa-wifi"></i> Directo</li>
+            <li><i class="fas fa-golf-ball"></i> Deporte</li>
+            <li><i class="fas fa-trophy"></i> Aprendizaje</li>
+        </ul>
+        <hr>
+        <ul>
+          <li><i class="fas fa-cog"></i> Configuración</li>
+          <li><i class="fas fa-flag"></i> Historial de denuncias</li>
+          <li><i class="fas fa-question-circle"></i> Ayuda</li>
+          <li><i class="fas fa-comment-alt"></i> Enviar Sugerencias</li>
+        </ul>
+        <hr>
+         <p>Informacion: Prensa, Derechos de autor, Contactar, Creadores. Desarrolladores, Publicidad</p><br>
+         <p>Términos Privacidad, Política y seguridad, Cómo funciona Youtube, Probar Funciones nuevas</p>
+         <i>&copy; 2022 Omar Velasquez</i>
+  		</nav>
+  	</div>
+    </div>
+    </label>
+
+   
+   <main >
+    <hr>
+    <div class="cont-video">
+    <h2>Recomendados</h2>
+      <amp-list layout="fixed-height" height="100" src="https://misadevflores.github.io/-misadevflores-amp-carrodecompra-omarvelasquez/data.json" binding="no">
+        <div placeholder>
+          <div class="placeholder-container">
+            <div class="placeholder-vid">
+              <div class="vid-pl"></div>
+              <div class="title-pl"></div>
+              <div class="title-pl"></div>
+            </div>
+            <div class="placeholder-vid">
+              <div class="vid-pl"></div>
+              <div class="title-pl"></div>
+              <div class="title-pl"></div>
+            </div>
+            <div class="placeholder-vid">
+              <div class="vid-pl"></div>
+              <div class="title-pl"></div>
+              <div class="title-pl"></div>
+            </div>
+            <div class="placeholder-vid">
+              <div class="vid-pl"></div>
+              <div class="title-pl"></div>
+              <div class="title-pl"></div>
+            </div>
+            <div class="placeholder-vid">
+              <div class="vid-pl"></div>
+              <div class="title-pl"></div>
+              <div class="title-pl"></div>
+            </div>
+            <div class="placeholder-vid">
+              <div class="vid-pl"></div>
+              <div class="title-pl"></div>
+              <div class="title-pl"></div>
+            </div>
+          </div>
+        </div>
+        <template type="amp-mustache">
+          <div class="video">
+            <amp-youtube
+              data-videoid="{{id}}"
+              layout="responsive"
+              width="480"
+              height="270"
+            >
+              <amp-img src="{{img}}" placeholder layout="fill"> </amp-img>
+            </amp-youtube>
+            <h2>{{title}}</h2>
+            <p>Publicado en {{date}}</p>
+            <p>
+              <strong>{{creator}}</strong>
+            </p>
+            <p>Duracion: {{duration}}</p>
+          </div>
+        </template>
+
+      </amp-list>
+      <br>
+      <hr>
+      <h2>Shorts populares</h2>
+      <br>
+      <amp-list layout="fixed-height" height="100" src="data.json" binding="no">
+        <div placeholder>
+          <div class="placeholder-container">
+            <div class="placeholder-vid">
+              <div class="vid-pl"></div>
+              <div class="title-pl"></div>
+              <div class="title-pl"></div>
+            </div>
+            <div class="placeholder-vid">
+              <div class="vid-pl"></div>
+              <div class="title-pl"></div>
+              <div class="title-pl"></div>
+            </div>
+            <div class="placeholder-vid">
+              <div class="vid-pl"></div>
+              <div class="title-pl"></div>
+              <div class="title-pl"></div>
+            </div>
+            <div class="placeholder-vid">
+              <div class="vid-pl"></div>
+              <div class="title-pl"></div>
+              <div class="title-pl"></div>
+            </div>
+            <div class="placeholder-vid">
+              <div class="vid-pl"></div>
+              <div class="title-pl"></div>
+              <div class="title-pl"></div>
+            </div>
+            <div class="placeholder-vid">
+              <div class="vid-pl"></div>
+              <div class="title-pl"></div>
+              <div class="title-pl"></div>
+            </div>
+          </div>
+        </div>
+        <template type="amp-mustache">
+          <div class="video">
+            <amp-youtube
+              data-videoid="{{id}}"
+              layout="responsive"
+              width="480"
+              height="270"
+            >
+              <amp-img src="{{img}}" placeholder layout="fill"> </amp-img>
+            </amp-youtube>
+            <h2>{{title}}</h2>
+            <p>Publicado en {{date}}</p>
+            <p>
+              <strong>{{creator}}</strong>
+            </p>
+            <p>Duracion: {{duration}}</p>
+          </div>
+        </template>
+
+      </amp-list>
+      
+    </div>
+</main>
+  </body>
+</html>
